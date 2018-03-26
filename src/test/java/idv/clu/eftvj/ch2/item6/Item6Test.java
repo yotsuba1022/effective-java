@@ -50,4 +50,17 @@ public class Item6Test {
         assertEquals(keySet1, keySet3);
     }
 
+    @Test(expected = UnsupportedOperationException.class)
+    public void testKeySetUnsupportedOperation() {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        map.put(4, "Four");
+        map.put(5, "Five");
+
+        Set<Integer> keySet = map.keySet();
+        keySet.add(6);
+    }
+
 }
