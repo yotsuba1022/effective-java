@@ -63,4 +63,30 @@ public class Item6Test {
         keySet.add(6);
     }
 
+    @Test
+    public void testCalculateSumOfPrimitiveLong() {
+        long expected = 2305843008139952128L;
+        long actual = 0L;
+        long start = System.currentTimeMillis();
+        for (long i = 0; i <= Integer.MAX_VALUE; i++) {
+            actual += i;
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Total cost for case testCalculateSumOfPrimitiveLong: " + ( end - start ) + " msec.");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCalculateSumOfBoxedPrimitiveLong() {
+        Long expected = 2305843008139952128L;
+        Long actual = 0L;
+        long start = System.currentTimeMillis();
+        for (long i = 0; i <= Integer.MAX_VALUE; i++) {
+            actual += i;
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Total cost for case testCalculateSumOfBoxedPrimitiveLong: " + ( end - start ) + " msec.");
+        assertEquals(expected, actual);
+    }
+
 }
